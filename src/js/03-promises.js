@@ -38,18 +38,18 @@ function createPromise(position, delay) {
 function resultPromise(position, delay) {
   createPromise(position, delay)
     .then(({ position, delay }) => {
-      Notiflix.Notify.success(
+      Notify.success(
         `✅ Fulfilled promise ${position} in ${delay}ms`,
         {
-          timeout: 5000,
+          timeout: 4000,
           backOverlay: true,
         }
       );
       
     })
     .catch(({ position, delay }) => {
-      Notiflix.Notify.success(`❌ Rejected promise ${position} in ${delay}ms`, {
-        timeout: 5000,
+      Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, {
+        timeout: 4000,
         backOverlay: true,
       });
       
